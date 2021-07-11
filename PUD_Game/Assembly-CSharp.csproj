@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controls\touchLocation.cs" />
     <Compile Include="Assets\Scripts\Controls\multipleTouch.cs" />
+    <Compile Include="Assets\Scripts\Controls\Joystick.cs" />
+    <Compile Include="Assets\Scripts\Controls\joystickShoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
