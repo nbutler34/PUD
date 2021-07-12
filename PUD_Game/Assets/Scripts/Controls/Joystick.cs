@@ -1,56 +1,81 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Joystick : MonoBehaviour
 {
-    public Transform player;
-    public float speed = 5.0f;
+    public Transform player; //pud
+    public float speed = 2.0f;
     private bool touchStart = false;
     private Vector2 pointA;
     private Vector2 pointB;
 
-    public Transform circle;
-    public Transform outerCircle;
+    public Transform circle; //touch
+    public Transform outerCircle; //threshold
 
-    // Start is called before the first frame update
+    public GameObject joystickZone; //panel
+
+    public List<touchLocation> touches = new List<touchLocation>();
+
+    public int joystickID = 99;
+
+    private bool grappled = false;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        int i = 0;
+        while (i < Input.touchCount)
         {
-            pointA = outerCircle.transform.position;
+            Touch t = Input.GetTouch(i);
+            if (t.phase == TouchPhase.Began)
+            {
+                touches.Add(new touchLocation(t.fingerId, joystickZone));
 
-            circle.transform.position = pointA;
-            //outerCircle.transform.position = pointA;
-            //circle.GetComponent<SpriteRenderer>().enabled = true;
-            //outerCircle.GetComponent<SpriteRenderer>().enabled = true;
+                if (joystickCheck(i))
+                {
+                    pointA = outerCircle.transform.position;
+
+                    circle.transform.position = pointA;
+
+                    joystickID = i;
+                }
+            }
+            else if (t.phase == TouchPhase.Ended)
+            {
+                if(i == joystickID)
+                {
+                    touchStart = false;
+
+                    circle.transform.position = outerCircle.transform.position;
+                    joystickID = 99;
+                }
+
+                touchLocation thisTouch = touches.Find(touchLocation => touchLocation.touchId == t.fingerId);
+                touches.RemoveAt(touches.IndexOf(thisTouch));
+            }
+            else if (t.phase == TouchPhase.Moved)
+            {
+                touchLocation thisTouch = touches.Find(touchLocation => touchLocation.touchId == t.fingerId);
+
+                if (i == joystickID)
+                {
+                    touchStart = true;
+                    pointB = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(i).position.x, Input.GetTouch(i).position.y, Camera.main.transform.position.z));
+                }
+            }
+            ++i;
         }
-        if (Input.GetMouseButton(0))
-        {
-            touchStart = true;
-            pointB = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
-        }
-        else
-        {
-            touchStart = false;
-
-            circle.transform.position = outerCircle.transform.position;
-
-            //circle.GetComponent<SpriteRenderer>().enabled = false;
-            //outerCircle.GetComponent<SpriteRenderer>().enabled = false;
-        }
-
     }
 
     private void FixedUpdate()
     {
-        if (touchStart)
+        if (touchStart) //moves the circle part of the joystick and calls the move character function
         {
             Vector2 offset = pointB - pointA;
             Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
@@ -60,8 +85,31 @@ public class Joystick : MonoBehaviour
         }
     }
 
-    void moveCharacter(Vector2 direction)
+    void moveCharacter(Vector2 direction) //...
     {
         player.Translate(direction * speed * Time.deltaTime);
+    }
+
+    bool joystickCheck(int iD) //use a raycast at the given touch id to detect if it's in the joystick zone
+    {
+        bool output = false;
+
+        RaycastHit2D hit;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(iD).position);
+        if(hit = Physics2D.Raycast(ray.origin, new Vector2(0, 0)))
+        {
+            if(hit.collider.name == joystickZone.name)
+            {
+                output = true;
+            }
+        }
+
+        return output;
+    }
+
+    Vector2 getTouchPosition(Vector2 touchPosition) //idk if we need this
+    {
+        return GetComponent<Camera>().ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, transform.position.z));
     }
 }
