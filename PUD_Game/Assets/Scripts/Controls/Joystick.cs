@@ -128,11 +128,20 @@ public class Joystick : MonoBehaviour
                 if (i == joystickID) //if this finger is controlling the joystick
                 {
                     touchStart = true;
+                    pointA = outerCircle.transform.position;
                     pointB = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(i).position.x, Input.GetTouch(i).position.y, Camera.main.transform.position.z)); //sets the postion of the joystick
                 }
                 else if (grappled)
                 {
                     
+                }
+            }
+            else if (t.phase == TouchPhase.Stationary)
+            {
+                if(i == joystickID) //if this finger is controlling the joystick
+                {
+                    pointA = outerCircle.transform.position;
+                    pointB = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(i).position.x, Input.GetTouch(i).position.y, Camera.main.transform.position.z)); //sets the postion of the joystick
                 }
             }
             ++i;

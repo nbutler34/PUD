@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Controls\touchLocation.cs" />
     <Compile Include="Assets\Scripts\Controls\old\GrappleScript.cs" />
     <Compile Include="Assets\Scripts\Controls\multipleTouch.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraTracking.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
