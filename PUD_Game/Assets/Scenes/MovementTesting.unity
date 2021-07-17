@@ -1147,6 +1147,8 @@ MonoBehaviour:
   line: {fileID: 158649850}
   actionUnreleased: 0
   swingSpeed: 5
+  hitParticles: {fileID: 5691932653014129762, guid: e293539dda7105a41b3eef8dcb268744,
+    type: 3}
 --- !u!4 &1187412252
 Transform:
   m_ObjectHideFlags: 0

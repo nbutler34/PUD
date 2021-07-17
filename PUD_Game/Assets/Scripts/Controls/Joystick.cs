@@ -32,6 +32,10 @@ public class Joystick : MonoBehaviour
     public bool actionUnreleased;
     Rigidbody2D playerRB;
     public float swingSpeed = 5f;
+
+    //Effects
+    public ParticleSystem hitParticles;
+    ParticleSystem deleteObject;
     
 
     void Start()
@@ -222,6 +226,12 @@ public class Joystick : MonoBehaviour
             line.SetPosition(1, hit.point);
 
             grappled = true;
+
+            deleteObject = Instantiate(hitParticles, new Vector3(hit.point.x, hit.point.y, 0), new Quaternion(0, 0, 180, 0));
+            //deleteObject.transform.position = connectPoint;
+
+            Debug.Log(hit.point + ", " + deleteObject.transform.position);
+            Destroy(deleteObject, 1f);
         }
     }
 
@@ -265,5 +275,10 @@ public class Joystick : MonoBehaviour
     Vector2 getTouchPosition(Vector2 touchPosition) //idk if we need this
     {
         return GetComponent<Camera>().ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, transform.position.z));
+    }
+
+    IEnumerator DeleteClone(GameObject prefab, float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 }
