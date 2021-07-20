@@ -246,11 +246,11 @@ public class Joystick : MonoBehaviour
     {
         if (joystick)
         {
-            joint.distance -= 2*step;
+            joint.distance -= 4*step;
         }
         else
         {
-            joint.distance -= step;
+            joint.distance -= 4*step;
         }
         
     }
