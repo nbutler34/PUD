@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8394468071025757086}
   - component: {fileID: 5691932653014129762}
   - component: {fileID: 3533356558939142421}
+  - component: {fileID: 2231305676608773734}
   m_Layer: 0
   m_Name: GrappleParticles
   m_TagString: Untagged
@@ -4804,3 +4805,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2231305676608773734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236423168663535156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55b7f7208e02814fbfe558e0b59d0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

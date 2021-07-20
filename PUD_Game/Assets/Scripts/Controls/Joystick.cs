@@ -231,7 +231,7 @@ public class Joystick : MonoBehaviour
             //deleteObject.transform.position = connectPoint;
 
             Debug.Log(hit.point + ", " + deleteObject.transform.position);
-            Destroy(deleteObject, 1f);
+            //Destroy(deleteObject, 1f);
         }
     }
 
@@ -246,11 +246,11 @@ public class Joystick : MonoBehaviour
     {
         if (joystick)
         {
-            joint.distance -= 4*step;
+            joint.distance -= 4 * step;
         }
         else
         {
-            joint.distance -= 4*step;
+            joint.distance -= 2 * step;
         }
         
     }
@@ -259,11 +259,11 @@ public class Joystick : MonoBehaviour
     {
         if (joystick)
         {
-            joint.distance += 2 * step;
+            joint.distance += 4 * step;
         }
         else
         {
-            joint.distance += step;
+            joint.distance += 2 * step;
         }
     }
 

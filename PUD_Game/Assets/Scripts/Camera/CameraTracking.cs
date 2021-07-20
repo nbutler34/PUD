@@ -14,6 +14,7 @@ public class CameraTracking : MonoBehaviour
     void Start()
     {
         StartCoroutine(DelaySetting(2f));
+        SetScreenValues();
     }
 
     void Update()
@@ -35,20 +36,20 @@ public class CameraTracking : MonoBehaviour
         }
         else //scrolls when necessary
         {
-            if (ScreenPosition(player).x < padding && ScreenPosition(player).x > 0)
+            if (ScreenPosition(player).x < (padding / 4) && ScreenPosition(player).x > 0)
             {
                 MoveCamera(1, 1000f / ScreenPosition(player).x);
             }
-            else if (ScreenPosition(player).x > screenWidth - padding && ScreenPosition(player).x > 0)
+            else if (ScreenPosition(player).x > screenWidth - (padding * 1.5f) && ScreenPosition(player).x > 0)
             {
                 MoveCamera(-1, 1000f / (screenWidth - ScreenPosition(player).x));
             }
             
-            if (ScreenPosition(player).y < (padding / 2) && ScreenPosition(player).y > 0)
+            if (ScreenPosition(player).y < (padding / 4) && ScreenPosition(player).y > 0)
             {
                 MoveCamera(-2, 1000f / ScreenPosition(player).y);
             }
-            else if(ScreenPosition(player).y > screenHeight - (padding / 2) && ScreenPosition(player).x > 0)
+            else if(ScreenPosition(player).y > screenHeight - (padding / 1) && ScreenPosition(player).x > 0)
             {
                 MoveCamera(2, 1000f / (screenHeight - ScreenPosition(player).y));
             }
