@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ThreeStarGM : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class ThreeStarGM : MonoBehaviour
     Dictionary<int, float> levels = new Dictionary<int, float>()
     {
         {1, 4f},
-        {2, 5f}
+        {2, 5f},
+        {3, 5f}
     };
 
     public int levelSelected;
@@ -19,15 +21,22 @@ public class ThreeStarGM : MonoBehaviour
 
     private void Start()
     {
-        SetLevel();
+        DontDestroyOnLoad(gameObject);
     }
     public void SetLevel()
     {
-        levelSelected = levels.ElementAt(1).Key;
-        timeToBeat = levels.ElementAt(1).Value;
+        
+        timeToBeat = levels.ElementAt(levelSelected).Value;
 
         Debug.Log(levelSelected + "  " + timeToBeat);
+        Delay();
+        SceneManager.LoadScene("Level " + levelSelected);
+
     }
 
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(1f);
+    }
     
 }

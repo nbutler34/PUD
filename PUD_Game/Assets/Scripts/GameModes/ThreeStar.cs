@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThreeStar : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class ThreeStar : MonoBehaviour
     public GameObject star2;
     public GameObject star3;
 
+    public Text timerText;
+
+    private void Start()
+    {
+        GM = FindObjectOfType<ThreeStarGM>();
+    }
     private void Update()
     {
         if (startLevel && !endLevel)
@@ -35,8 +42,9 @@ public class ThreeStar : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Finish"))
         {
-            endLevel = true;
+            endLevel = true;            
             endScreen.SetActive(true);
+            timerText.text = timer.ToString();
             SetEndScreen();
         }
     }

@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MovementTesting.unity
     guid: 2bcb19d65741db64fabea9691400a230
+  - enabled: 1
+    path: Assets/Scenes/LevelS/Level 1.unity
+    guid: bf2ba45cfa378194cb5ff8ddf283c6e6
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: f58677af01d8953479900c048fd85542
+  - enabled: 1
+    path: Assets/Scenes/LevelS/Level 2.unity
+    guid: 76e138748c6371042b767d383be419d7
+  - enabled: 1
+    path: Assets/Scenes/LevelS/Level 3.unity
+    guid: b50f094f63bcf7844886db4b9aebd452
   m_configObjects: {}

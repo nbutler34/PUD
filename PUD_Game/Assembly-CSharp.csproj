@@ -62,10 +62,11 @@
     <Compile Include="Assets\Scripts\DeleteThis.cs" />
     <Compile Include="Assets\Scripts\Controls\touchLocation.cs" />
     <Compile Include="Assets\Scripts\Collectible\Collectible.cs" />
+    <Compile Include="Assets\Scripts\GameModes\ThreeStarGM.cs" />
     <Compile Include="Assets\Scripts\Controls\old\GrappleScript.cs" />
     <Compile Include="Assets\Scripts\GameModes\ThreeStar.cs" />
     <Compile Include="Assets\Scripts\Controls\multipleTouch.cs" />
-    <Compile Include="Assets\Scripts\GameModes\ThreeStarGM.cs" />
+    <Compile Include="Assets\Scripts\GameModes\ThreeStarLevelSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
