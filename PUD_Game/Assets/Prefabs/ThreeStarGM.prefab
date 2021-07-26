@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6164404357059358593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6164404357059358595}
+  - component: {fileID: 6164404357059358592}
+  m_Layer: 0
+  m_Name: ThreeStarGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6164404357059358595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164404357059358593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1048.3113, y: 420.79092, z: -1310.3865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6164404357059358592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164404357059358593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef777b7df5d27a41957f2535d76ef4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSelected: 0
+  timeToBeat: 0
+  Pud: {fileID: 7198439362783546257, guid: 2af7b0857c84f5f47850a48169d3984d, type: 3}
+  Levels:
+  - {fileID: 7754610584754040929, guid: 72fd471c22713b14588cbd249922305e, type: 3}
+  - {fileID: 201206339600933675, guid: 56d755b16ef2238468c2b6fef60f1593, type: 3}
+  - {fileID: 6075043326904869933, guid: 9d9d70558a212dc48bfdc237e146cc79, type: 3}
+  - {fileID: 6075043326904869933, guid: 9d9d70558a212dc48bfdc237e146cc79, type: 3}
+  levelSpawn: {fileID: 0}

@@ -47,11 +47,13 @@ public class Joystick : MonoBehaviour
         line.enabled = false;
         playerRB = player.GetComponent<Rigidbody2D>();
         lastLocation = player.position;
+        
     }
 
     void Update()
     {
-        if(player.position.x > lastLocation.x)
+        
+        if (player.position.x > lastLocation.x)
         {
             player.GetComponent<SpriteRenderer>().flipX = false;
         }

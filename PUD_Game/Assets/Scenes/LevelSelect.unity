@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
-  GM: {fileID: 822933453}
+  GM: {fileID: 3970292581066294967}
 --- !u!114 &576559393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 822933453}
+      - m_Target: {fileID: 3970292581066294967}
         m_TargetAssemblyTypeName: ThreeStarGM, Assembly-CSharp
         m_MethodName: SetLevel
         m_Mode: 1
@@ -607,51 +607,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586391930}
   m_CullTransparentMesh: 1
---- !u!1 &822933452
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 822933454}
-  - component: {fileID: 822933453}
-  m_Layer: 0
-  m_Name: ThreeStarGM
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &822933453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822933452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef777b7df5d27a41957f2535d76ef4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelSelected: 0
-  timeToBeat: 0
---- !u!4 &822933454
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822933452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1048.3113, y: 420.79092, z: -1310.3865}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1355988717
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,7 +703,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 822933453}
+      - m_Target: {fileID: 3970292581066294967}
         m_TargetAssemblyTypeName: ThreeStarGM, Assembly-CSharp
         m_MethodName: SetLevel
         m_Mode: 1
@@ -811,7 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  GM: {fileID: 822933453}
+  GM: {fileID: 3970292581066294967}
 --- !u!1 &1675601386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,7 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
-  GM: {fileID: 822933453}
+  GM: {fileID: 3970292581066294967}
 --- !u!114 &1904117901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,7 +1039,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 822933453}
+      - m_Target: {fileID: 3970292581066294967}
         m_TargetAssemblyTypeName: ThreeStarGM, Assembly-CSharp
         m_MethodName: SetLevel
         m_Mode: 1
@@ -1197,3 +1152,55 @@ MonoBehaviour:
   m_Spacing: {x: 25, y: 25}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!4 &3970292581066294964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970292581066294966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1048.3113, y: 420.79092, z: -1310.3865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3970292581066294966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3970292581066294964}
+  - component: {fileID: 3970292581066294967}
+  m_Layer: 0
+  m_Name: ThreeStarGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &3970292581066294967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970292581066294966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef777b7df5d27a41957f2535d76ef4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSelected: 0
+  timeToBeat: 0
+  Pud: {fileID: 7198439362783546257, guid: 2af7b0857c84f5f47850a48169d3984d, type: 3}
+  Levels:
+  - {fileID: 7754610584754040929, guid: 72fd471c22713b14588cbd249922305e, type: 3}
+  - {fileID: 201206339600933675, guid: 56d755b16ef2238468c2b6fef60f1593, type: 3}
+  - {fileID: 6075043326904869933, guid: 9d9d70558a212dc48bfdc237e146cc79, type: 3}
+  - {fileID: 6075043326904869933, guid: 9d9d70558a212dc48bfdc237e146cc79, type: 3}
+  levelSpawn: {fileID: 0}

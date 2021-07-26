@@ -19,6 +19,11 @@ public class ThreeStarGM : MonoBehaviour
     public int levelSelected;
     public float timeToBeat;
 
+    public GameObject Pud;
+    public GameObject[] Levels;
+
+    public GameObject levelSpawn;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -26,17 +31,25 @@ public class ThreeStarGM : MonoBehaviour
     public void SetLevel()
     {
         
-        timeToBeat = levels.ElementAt(levelSelected).Value;
+        timeToBeat = levels.ElementAt(levelSelected - 1).Value;
 
         Debug.Log(levelSelected + "  " + timeToBeat);
         Delay();
-        SceneManager.LoadScene("Level");
-
+        SceneManager.LoadScene("Level");     
+        
     }
 
+   
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(1f);
+    }
+
+    public void SetGameUp()
+    {
+        levelSpawn = GameObject.FindGameObjectWithTag("LevelSpawn");
+        Instantiate(Levels[levelSelected - 1], levelSpawn.transform);
+        Instantiate(Pud, GameObject.FindGameObjectWithTag("PudSpawn").transform, false);
     }
     
 }
