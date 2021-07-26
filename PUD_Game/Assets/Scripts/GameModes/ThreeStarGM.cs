@@ -30,7 +30,7 @@ public class ThreeStarGM : MonoBehaviour
 
         Debug.Log(levelSelected + "  " + timeToBeat);
         Delay();
-        SceneManager.LoadScene("Level " + levelSelected);
+        SceneManager.LoadScene("Level");
 
     }
 

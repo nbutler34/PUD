@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\GameModes\ThreeStar.cs" />
     <Compile Include="Assets\Scripts\Controls\multipleTouch.cs" />
     <Compile Include="Assets\Scripts\GameModes\ThreeStarLevelSelector.cs" />
+    <Compile Include="Assets\Scripts\GameModes\LevelSelector.cs" />
+    <Compile Include="Assets\Scripts\PageSwiper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
