@@ -9,11 +9,18 @@ public class ThreeStarGM : MonoBehaviour
     //dictionary 
     //key = level selcted 
     //value = time to beat
-    Dictionary<int, float> levels = new Dictionary<int, float>()
+    public Dictionary<int, float> levels = new Dictionary<int, float>()
     {
         {1, 4f},
         {2, 5f},
         {3, 5f}
+    };
+
+    public Dictionary<int, bool> levelsUnlocked = new Dictionary<int, bool>()
+    {
+        {1, true},
+        {2, false},
+        {3, false}
     };
 
     public int levelSelected;
@@ -51,5 +58,7 @@ public class ThreeStarGM : MonoBehaviour
         Instantiate(Levels[levelSelected - 1], levelSpawn.transform);
         Instantiate(Pud, GameObject.FindGameObjectWithTag("PudSpawn").transform, false);
     }
+
+    
     
 }
