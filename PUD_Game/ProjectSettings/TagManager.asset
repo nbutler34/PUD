@@ -7,6 +7,8 @@ TagManager:
   - Start
   - PudSpawn
   - LevelSpawn
+  - saveButton
+  - loadButton
   layers:
   - Default
   - TransparentFX

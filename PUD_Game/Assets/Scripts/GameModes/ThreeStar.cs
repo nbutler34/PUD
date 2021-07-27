@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class ThreeStar : MonoBehaviour
     public bool endLevel;
 
     public ThreeStarGM GM;
+    public Saver saver;
 
     public GameObject endScreen;
     public GameObject star1;
@@ -21,6 +23,7 @@ public class ThreeStar : MonoBehaviour
     private void Start()
     {
         GM = FindObjectOfType<ThreeStarGM>();
+        saver = FindObjectOfType<Saver>();
     }
     private void Update()
     {
@@ -67,5 +70,12 @@ public class ThreeStar : MonoBehaviour
         {
             star3.SetActive(true);
         }
+
+        if(timer < GM.timeToBeat + 6)
+        {            
+            GM.levelsUnlocked[GM.levelSelected + 1] = true;
+        }
+
+        saver.Save();
     }
 }

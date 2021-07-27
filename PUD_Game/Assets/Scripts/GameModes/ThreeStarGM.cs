@@ -37,9 +37,8 @@ public class ThreeStarGM : MonoBehaviour
     }
     public void SetLevel()
     {
-        
+       
         timeToBeat = levels.ElementAt(levelSelected - 1).Value;
-
         Debug.Log(levelSelected + "  " + timeToBeat);
         Delay();
         SceneManager.LoadScene("Level");     

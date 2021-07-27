@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameModes\LevelSelector.cs" />
+    <Compile Include="Assets\Scripts\Game Management\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraTracking.cs" />
     <Compile Include="Assets\Scripts\Controls\Joystick.cs" />
     <Compile Include="Assets\Scripts\SetGameUp.cs" />
@@ -69,11 +70,15 @@
     <Compile Include="Assets\Scripts\Controls\old\GrappleScript.cs" />
     <Compile Include="Assets\Scripts\GameModes\ThreeStar.cs" />
     <Compile Include="Assets\Scripts\Controls\multipleTouch.cs" />
-    <Compile Include="Assets\Scripts\GameModes\ThreeStarLevelSelector.cs" />
-    <Compile Include="Assets\Scripts\Game Management\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Game Management\Saver.cs" />
+    <Compile Include="Assets\Scripts\GameModes\ThreeStarLevelSelector.cs" />
+    <Compile Include="Assets\Scripts\Game Management\SaveManagerSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Saves\save_6.txt" />
+    <None Include="Assets\Saves\save_3.txt" />
+    <None Include="Assets\Saves\save_5.txt" />
+    <None Include="Assets\Saves\save_4.txt" />
     <None Include="Assets\Saves\save_1.txt" />
     <None Include="Assets\Saves\save_2.txt" />
   </ItemGroup>

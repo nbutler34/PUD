@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ThreeStarLevelSelector : MonoBehaviour
@@ -8,6 +9,11 @@ public class ThreeStarLevelSelector : MonoBehaviour
     public ThreeStarGM GM;
     public void SetLevel()
     {
-        GM.levelSelected = level;
+        if (GM.levelsUnlocked.ElementAt(level - 1).Value)
+        {
+            GM.levelSelected = level;
+            GM.SetLevel();
+        }
+        
     }
 }
