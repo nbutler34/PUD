@@ -271,7 +271,7 @@ public class Joystick : MonoBehaviour
 
     void UpdateLineEnd()
     {
-        line.SetPosition(0, player.position - line.transform.position);
+        line.SetPosition(0, player.position - line.transform.localPosition);
     }
 
     Vector2 getTouchPosition(Vector2 touchPosition) //idk if we need this
