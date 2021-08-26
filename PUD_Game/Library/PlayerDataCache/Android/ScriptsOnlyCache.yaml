@@ -108,7 +108,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4230}
     - Class: 114
-      Script: {instanceID: 16126}
+      Script: {instanceID: 16244}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -169,7 +169,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2484}
     - Class: 114
-      Script: {instanceID: 16126}
+      Script: {instanceID: 16244}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -716,4 +716,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/LevelSelect.unity
   - Assets/Scenes/MovementTesting.unity
   - Assets/Scenes/Level.unity
-  playerPath: C:/Users/tolso/OneDrive/Documents/GitHub/PUD/Build_001.apk
+  playerPath: C:/Users/tolso/OneDrive/Documents/GitHub/PUD/Builds/Build_002.apk
