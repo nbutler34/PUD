@@ -9,6 +9,7 @@ TagManager:
   - LevelSpawn
   - saveButton
   - loadButton
+  - deleteButton
   layers:
   - Default
   - TransparentFX

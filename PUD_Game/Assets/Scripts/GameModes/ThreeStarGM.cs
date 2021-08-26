@@ -13,21 +13,27 @@ public class ThreeStarGM : MonoBehaviour
     {
         {1, 4f},
         {2, 5f},
-        {3, 5f}
+        {3, 5f},
+        {4, 5f},
+        {5, 3f}
     };
 
     public Dictionary<int, bool> levelsUnlocked = new Dictionary<int, bool>()
     {
         {1, true},
         {2, false},
-        {3, false}
+        {3, false},
+        {4, false},
+        {5, false}
     };
 
     public Dictionary<int, float> playerTime = new Dictionary<int, float>()
     {
         {1, 100f},
         {2, 100f},
-        {3, 100f}
+        {3, 100f},
+        {4, 100f},
+        {5, 100f}
     };
 
     public int levelSelected;

@@ -317,7 +317,7 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 0.005
   m_MaxDistanceOnly: 1
 --- !u!114 &2938138590163542375
@@ -808,6 +808,8 @@ MonoBehaviour:
   line: {fileID: 3233388838895864361}
   actionUnreleased: 0
   swingSpeed: 5
+  dummyObj: {fileID: 6133101028780307102, guid: 35ce2c691cc63fc48aec686c3319a96e,
+    type: 3}
   hitParticles: {fileID: 5691932653014129762, guid: e293539dda7105a41b3eef8dcb268744,
     type: 3}
 --- !u!1 &3233388840785061146

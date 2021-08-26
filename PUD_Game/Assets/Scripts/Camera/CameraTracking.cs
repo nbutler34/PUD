@@ -73,7 +73,7 @@ public class CameraTracking : MonoBehaviour
         screenWidth = Screen.width;
         screenHeight = Screen.height;
         padding = screenWidth / 5;
-        Debug.Log(screenWidth + "p x " + screenHeight + "p, padding is " + padding + "p.");
+        ///Debug.Log(screenWidth + "p x " + screenHeight + "p, padding is " + padding + "p.");
     }
 
     Vector3 ScreenPosition(Transform obj)

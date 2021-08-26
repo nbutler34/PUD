@@ -32,6 +32,7 @@ public class Joystick : MonoBehaviour
     public bool actionUnreleased;
     Rigidbody2D playerRB;
     public float swingSpeed = 5f;
+    public GameObject dummyObj;
 
     //Effects
     public ParticleSystem hitParticles;
@@ -216,11 +217,12 @@ public class Joystick : MonoBehaviour
         if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody2D>() != null) //if the raycast hits an object with a rigidbody2d,
         {
             joint.enabled = true;
+            GameObject dummy = Instantiate(dummyObj, new Vector2(hit.transform.position.x, hit.transform.position.y), Quaternion.identity);
 
-            Vector2 connectPoint = hit.point - new Vector2(hit.collider.transform.position.x, hit.collider.transform.position.y); //gets the corrected anchor point
+            Vector2 connectPoint = hit.point - new Vector2(dummy.transform.position.x, dummy.transform.position.y); //gets the corrected anchor point
 
             joint.connectedAnchor = connectPoint; //sets anchor point to the corrected value
-            joint.connectedBody = hit.collider.gameObject.GetComponent<Rigidbody2D>(); //connects the hit rigibody2d
+            joint.connectedBody = dummy.gameObject.GetComponent<Rigidbody2D>(); //connects the hit rigibody2d
             joint.distance = Vector2.Distance(player.position, hit.point); //sets the distance between player and hit point
 
             line.enabled = true;
@@ -232,13 +234,14 @@ public class Joystick : MonoBehaviour
             deleteObject = Instantiate(hitParticles, new Vector3(hit.point.x, hit.point.y, 0), new Quaternion(0, 0, 180, 0));
             //deleteObject.transform.position = connectPoint;
 
-            Debug.Log(hit.point + ", " + deleteObject.transform.position);
+            //Debug.Log(hit.point + ", " + deleteObject.transform.position);
             //Destroy(deleteObject, 1f);
         }
     }
 
     void BreakRope()
     {
+        
         joint.enabled = false;
         line.enabled = false;
         grappled = false;

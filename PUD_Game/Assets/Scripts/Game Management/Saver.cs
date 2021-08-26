@@ -10,15 +10,19 @@ public class Saver : MonoBehaviour
 
     public GameObject saveButton;
     public GameObject loadButton;
+    public GameObject deleteSaveButton;
     private void Awake()
     {
         SaveSystem.Init();
         DontDestroyOnLoad(gameObject);
         saveButton = GameObject.FindGameObjectWithTag("saveButton");
         loadButton = GameObject.FindGameObjectWithTag("loadButton");
+        deleteSaveButton = GameObject.FindGameObjectWithTag("deleteButton");
 
         saveButton.GetComponent<Button>().onClick.AddListener(Save);
         loadButton.GetComponent<Button>().onClick.AddListener(LoadSave);
+        deleteSaveButton.GetComponent<Button>().onClick.AddListener(DeleteSaves);
+
         GM = FindObjectOfType<ThreeStarGM>();
         LoadSave();
     }
@@ -34,7 +38,7 @@ public class Saver : MonoBehaviour
 
         SaveSystem.Save(json);
         //debug line if you need to view saved json file
-        //Debug.Log(json);
+        Debug.Log(json);
     }
 
     public void LoadSave()
@@ -58,7 +62,9 @@ public class Saver : MonoBehaviour
 
     public void DeleteSaves()
     {
+
         SaveSystem.DeleteSaves();
+        Debug.Log("Deleted Saves");
     }
 
 }
