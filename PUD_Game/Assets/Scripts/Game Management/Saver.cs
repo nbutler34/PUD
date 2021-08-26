@@ -28,10 +28,13 @@ public class Saver : MonoBehaviour
     {
         GM = FindObjectOfType<ThreeStarGM>();
 
-        string json = JsonConvert.SerializeObject(GM.levels, Formatting.Indented) + 'n' + JsonConvert.SerializeObject(GM.levelsUnlocked, Formatting.Indented);
+        //converts dictionarys into json file seperated by "n" so that it can be split later
+        string json = JsonConvert.SerializeObject(GM.levels, Formatting.Indented) + 'n' + JsonConvert.SerializeObject(GM.levelsUnlocked, Formatting.Indented) + 'n' +
+            JsonConvert.SerializeObject(GM.playerTime, Formatting.Indented);
 
         SaveSystem.Save(json);
-        Debug.Log(json);
+        //debug line if you need to view saved json file
+        //Debug.Log(json);
     }
 
     public void LoadSave()
@@ -39,16 +42,17 @@ public class Saver : MonoBehaviour
         string saveString = SaveSystem.Load();
         string[] splits = saveString.Split('n');
 
-        Debug.Log(splits[0]);
-        Debug.Log(splits[1]);
-
+        //seperate dictionary strings and convert them back into dictionaries
         Dictionary<int, float> levelsLoad  = JsonConvert.DeserializeObject<Dictionary<int, float>>(splits[0]);
         Dictionary<int, bool> levelsUnlockLoad = JsonConvert.DeserializeObject<Dictionary<int, bool>>(splits[1]);
+        Dictionary<int, float> playerTime = JsonConvert.DeserializeObject<Dictionary<int, float>>(splits[2]);
 
         GM = FindObjectOfType<ThreeStarGM>();
 
+        //take dictionaries from save data and put them into game data
         GM.levels = levelsLoad;
         GM.levelsUnlocked = levelsUnlockLoad;
+        GM.playerTime = playerTime;
 
     }
 

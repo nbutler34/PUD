@@ -23,6 +23,13 @@ public class ThreeStarGM : MonoBehaviour
         {3, false}
     };
 
+    public Dictionary<int, float> playerTime = new Dictionary<int, float>()
+    {
+        {1, 100f},
+        {2, 100f},
+        {3, 100f}
+    };
+
     public int levelSelected;
     public float timeToBeat;
 

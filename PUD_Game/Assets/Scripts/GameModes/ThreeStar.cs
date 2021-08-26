@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 public class ThreeStar : MonoBehaviour
@@ -19,6 +21,7 @@ public class ThreeStar : MonoBehaviour
     public GameObject star3;
 
     public Text timerText;
+    public Text timerTextOnScreen;
 
     private void Start()
     {
@@ -30,6 +33,8 @@ public class ThreeStar : MonoBehaviour
         if (startLevel && !endLevel)
         {
             timer += Time.deltaTime;
+            //rounds timer to 3 decimal places ex. 0.000
+            timerTextOnScreen.text = (Mathf.Round(timer * 1000f) / 1000f).ToString();
         }
     }
 
@@ -47,6 +52,7 @@ public class ThreeStar : MonoBehaviour
         {
             endLevel = true;            
             endScreen.SetActive(true);
+            timer = Mathf.Round(timer * 1000f) / 1000f;
             timerText.text = timer.ToString();
             SetEndScreen();
         }
@@ -54,6 +60,8 @@ public class ThreeStar : MonoBehaviour
 
     public void SetEndScreen()
     {
+
+        //system to set the amount of stars the player got on the level
         if (timer < GM.timeToBeat)
         {
             star1.SetActive(true);
@@ -75,6 +83,13 @@ public class ThreeStar : MonoBehaviour
         {            
             GM.levelsUnlocked[GM.levelSelected + 1] = true;
         }
+
+        //set dictionary value for playertime for the level just played
+        if(timer < GM.playerTime[GM.levelSelected])
+        {
+            GM.playerTime[GM.levelSelected] = timer;
+        }
+        
 
         saver.Save();
     }
