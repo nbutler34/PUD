@@ -13,6 +13,7 @@ public class PostLevelMenu : MonoBehaviour
     }
     public void BackToLevelSelect()
     {
+        ThreeStarGM = FindObjectOfType<ThreeStarGM>().gameObject;
         Destroy(ThreeStarGM);
         SceneManager.LoadScene("LevelSelect");
     }
