@@ -56,6 +56,12 @@ public class ThreeStar : MonoBehaviour
             timerText.text = timer.ToString();
             SetEndScreen();
         }
+
+        if (collision.gameObject.CompareTag("spikes"))
+        {
+            endScreen.SetActive(true);
+            GetComponentInChildren<PostLevelMenu>().RetryLevel();
+        }
     }
 
     public void SetEndScreen()
