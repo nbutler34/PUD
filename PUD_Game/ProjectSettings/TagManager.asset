@@ -11,6 +11,7 @@ TagManager:
   - loadButton
   - deleteButton
   - spikes
+  - Invisible
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - CanGrapple
-  - 
+  - PostProcess
   - 
   - 
   - 
